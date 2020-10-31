@@ -43,7 +43,9 @@ class PostsCarousel extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Image(
+                height: 400.0,
                 image: AssetImage(post.imageUrl),
+                fit: BoxFit.cover,
               ),
             ),
           ),

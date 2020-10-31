@@ -45,8 +45,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 15.0,
                   ),
-                  fillColor: Colors.white,
-                  filled: true,
                   hintText: 'Username',
                   prefixIcon: Icon(
                     Icons.account_box_outlined,
@@ -66,8 +64,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 15.0,
                   ),
-                  fillColor: Colors.white,
-                  filled: true,
                   hintText: 'Password',
                   prefixIcon: Icon(
                     Icons.lock,
@@ -114,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Container(
                     alignment: Alignment.center,
                     color: Theme.of(context).primaryColor,
-                    height: 80.0,
+                    height: 50.0,
                     child: Text(
                       'Don\'t have an account? Sign up',
                       style: TextStyle(

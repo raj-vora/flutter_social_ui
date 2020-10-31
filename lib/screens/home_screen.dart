@@ -50,7 +50,10 @@ class _HomeScreenState extends State<HomeScreen>
           ),
           indicatorWeight: 3.0,
           tabs: <Widget>[
-            Text('Trending'),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text('Trending'),
+            ),
             Text('Latest'),
           ],
         ),
@@ -64,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen>
             title: 'Posts',
             posts: posts,
           ),
+          SizedBox(height: 50.0),
         ],
       ),
     );

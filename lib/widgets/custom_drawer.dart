@@ -21,54 +21,64 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          Stack(
-            children: [
-              Image(
-                height: 200.0,
-                width: double.infinity,
-                image: AssetImage(currentUser.backgroundImageUrl),
-                fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfileScreen(
+                  user: currentUser,
+                ),
               ),
-              Positioned(
-                bottom: 20.0,
-                left: 20.0,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Container(
-                      height: 100.0,
-                      width: 100.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [],
-                        border: Border.all(
-                          width: 3.0,
-                          color: Theme.of(context).primaryColor,
+            ),
+            child: Stack(
+              children: [
+                Image(
+                  height: 200.0,
+                  width: double.infinity,
+                  image: AssetImage(currentUser.backgroundImageUrl),
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  bottom: 20.0,
+                  left: 20.0,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        height: 100.0,
+                        width: 100.0,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [],
+                          border: Border.all(
+                            width: 3.0,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
-                      ),
-                      child: ClipOval(
-                        child: Image(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            currentUser.profileImageUrl,
+                        child: ClipOval(
+                          child: Image(
+                            fit: BoxFit.cover,
+                            image: AssetImage(
+                              currentUser.profileImageUrl,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 6.0),
-                    Text(
-                      currentUser.name,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.5,
+                      SizedBox(width: 6.0),
+                      Text(
+                        currentUser.name,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.5,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
           _buildDrawerOption(
             Icon(Icons.dashboard),
